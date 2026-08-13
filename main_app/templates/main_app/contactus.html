@@ -1,0 +1,142 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactus LJ Digital Concept</title>
+    <link rel="stylesheet" href="{% static 'main_app/style.css' %}">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo">LJ Digital Concept</div>
+        <ul class="nav-links">
+          <li><a href="{% url 'home' %}" > Home </a></li>
+          <li><a href="{% url 'services' %}" > Services </a></li>
+          <li><a href="{% url 'aboutus' %}"> About </a></li>
+          <li><a href="{% url 'contactus' %}" class="active"> Contact </a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Hero section -->
+    <header class="hero">
+      <div class="container hero-content">
+        <h1>Start Your Digital Transition</h1>
+        <p>
+          request a web creation proporsal quote or secure an academic
+          consultation below.
+        </p>
+      </div>
+    </header>
+
+    <!-- contact Form wrapper -->
+    <section class="section-paddings">
+      <div class="container">
+        <div class="contact-wrapper">
+          <!-- Working HTML Contact Form -->
+          <div>
+            <form method="post" class="contact-form">
+              <div class="form-group">
+                <label for="name"> Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  placeholder="Input Your Name"
+                />
+              </div>
+              <div class="form-group"> 
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="jade@example.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="Subject">Program or project of interest</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="Web Developement / Data analysis / Ai automation"
+                />
+              </div>
+              <div class="form-group">
+                <label for="Message"> Detailed Message</label>
+                <textarea
+                  id="message"
+                  rows="6"
+                  required
+                  placeholder="Tell us about your website specification or career goals...."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-submit">Submit Inquiry</button>
+            </form>
+          </div>
+
+          <!-- info box -->
+          <div class="info-box">
+            <h3>The Studio Headquaters</h3>
+            <p style="opacity: 0.8; margin-bottom: 30px;">
+              Our web design teams and tranning councelors monitor lines closely
+              to return answer inside 24 business hours.
+            </p>
+
+            <div class="info-item">
+                <strong> Studio Location:</strong>
+                <p> 502 tech bouverd floor2, innovation city, ny 10011</p>
+            </div>
+            <div class="info-item">
+                <strong> Direct Academic helpline:</strong>
+                <p> 080122442525</p>
+            </div>
+            <div class="info-item">
+                <strong> Imbounnd email gate:</strong>
+                <p> train@ljdigitalconcept@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4> LJ Digital concept</h4>
+            <p> Your premium engineering firm and premier academy specializing im custom layout web developement,
+              and  platform building, and mordern digital track courses.</p>
+          </div>
+
+            <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="{% url 'home' %}"> Home </a></li>
+              <li><a href="{% url 'aboutus' %}"> About </a></li>
+              <li><a href="{% url 'services' %}"> Services </a></li>
+              <li><a href="{% url 'contactus' %}"> Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Details</h4>
+            <p>Email: trainatdigitalconcept@gmail.com</p>
+            <p>phone:08012345789</p>
+            <p>Studio: new garrage floor 2</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Lj Digital Concept. All Rights Reserved</p>
+        </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

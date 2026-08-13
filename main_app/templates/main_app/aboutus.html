@@ -1,0 +1,148 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>about us LJ DIGITAL CONCEPT</title>
+    <link rel="stylesheet" href="{% static 'main_app/style.css' %}">
+  </head>
+  <body>
+    <!-- Sticky navigation bar -->
+        <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo">LJ Digital Concept</div>
+        <ul class="nav-links">
+          <li><a href="{% url 'home' %}" > Home </a></li>
+          <li><a href="{% url 'services' %}" > Services </a></li>
+          <li><a href="{% url 'aboutus' %}" class="active"> About </a></li>
+          <li><a href="{% url 'contactus' %}" > Contact </a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- hero sectiom -->
+    <header class="hero">
+      <div class="container hero-content">
+        <h1>Driven by Developement. Defined by Education.</h1>
+        <p>
+          Empowering organizations with functional custom web application system
+          while raising the next generation of engineers
+        </p>
+      </div>
+    </header>
+
+    <!-- About section -->
+    <section class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Why choose LJ Digital Concept</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 4px auto;">
+          We do not just teach text; we actively construct client applications
+          daily. Our students receive training derived directly from live
+          project environments, not theoretical simulations.
+        </p>
+        <div class="mv-container">
+          <div class="mv-box">
+            <h3>Our Mission</h3>
+            <p>
+              To design resilient, responsive digital solutions for scaling
+              enterprises while equipping tech enthusiasts with elite software
+              development capabilities.
+            </p>
+          </div>
+          <div class="mv-box">
+            <h3>Our Vision</h3>
+            <p>
+              To stand as the absolute global landmark for tech training,
+              acknowledged for converting raw beginners into high-velocity tech
+              contributors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team section -->
+     <section class="section-padding features-bg">
+      <div class="container">
+        <h2 class="section-title">Our Mentorship Board</h2>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-img-placeholder"> <img src="" alt="Not yet"></div>
+            <div class="team-info">
+              <h3> Leonard Gorge </h3>
+              <p> Founder & lead web Engineer</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-img-placeholder"> <img src="" alt=""></div>
+            <div class="team-info">
+              <h3> Amanda vance</h3>
+              <p> Head of software instruction</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-img-placeholder"> <img src="" alt=""></div>
+            <div class="team-info">
+              <h3> Marcus brody</h3>
+              <p> product and data strategist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+     </section>
+
+     <!-- Gallery section -->
+      <section class="section-padding"> 
+        <div class="container">
+          <h2 class="section-title"> Live class Ecosystems</h2>
+          <div class="gallery-grid"> 
+            <div class="gallery-item"> Full stack pratical lab</div>
+            <div class="gallery-item"> UI/UX Product Sprint</div>
+            <div class="gallery-item"> UI/UX Product Sprint</div>
+            <div class="gallery-item"> Data Science Hackathon</div>
+            <div class="gallery-item"> Cyber Security Defence run</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4> LJ Digital concept</h4>
+            <p> Your premium engineering firm and premier academy specializing im custom layout web developement,
+              and  platform building, and mordern digital track courses.</p>
+          </div>
+
+            <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="{% url 'home' %}"> Home </a></li>
+              <li><a href="{% url 'aboutus' %}"> About </a></li>
+              <li><a href="{% url 'services' %}"> Services </a></li>
+              <li><a href="{% url 'contactus' %}"> Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Details</h4>
+            <p>Email: trainatdigitalconcept@gmail.com</p>
+            <p>phone:08012345789</p>
+            <p>Studio: new garrage floor 2</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Lj Digital Concept. All Rights Reserved</p>
+        </div>
+        </div>
+      </div>
+    </footer>
+    
+  </body>
+</html>
