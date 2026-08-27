@@ -39,8 +39,7 @@ img {
 .section-padding{
     padding: 80px 0;
 }
-.section-tite{
-    /* text-align: center; */
+.section-title{
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: var(--dark-blue);
@@ -86,6 +85,7 @@ img {
     display: flex;
     list-style: none;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .nav-links a{
@@ -207,8 +207,14 @@ img {
     justify-content:center;
     color: var(--white);
     font-weight: bold;
-    object-fit: cover;
     width: 100%;
+    overflow: hidden;
+}
+
+.team-img-placeholder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .team-info {
@@ -223,7 +229,7 @@ img {
     color: var(--primary-blue);
     font-weight: 600;
 }
-.team-card :hover{
+.team-card:hover{
     transform: scale(1.03);
 }
 
@@ -263,7 +269,7 @@ img {
     transition: var(--transition-fast);
 }
 
-.gallery-item :hover {
+.gallery-item:hover {
     opacity: 0.9;
     transform: scale(1.02);
 }
@@ -291,8 +297,7 @@ img {
 
 .service-img-placeholder {
     height: 180px;
-    background: linear-gradient(45deg, var
-    (var(--primary-blue), var(--dark-blue)));
+    background: linear-gradient(45deg, var(--primary-blue), var(--dark-blue));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,6 +305,13 @@ img {
     font-weight: bold;
     text-align: center;
     padding: 10px;
+    overflow: hidden;
+}
+
+.service-img-placeholder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .service-detail{
@@ -318,7 +330,7 @@ img {
     gap: 30px;
 }
 
-.testimonials-card{
+.testimonial-card{
     flex: 1;
     background-color: var(--white);
     padding: 30px;
@@ -330,7 +342,7 @@ img {
 
 .contact-wrapper {
   max-width: 1000px;
-  margin: 30px;
+  margin: 30px auto;
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 50px;
@@ -471,16 +483,23 @@ img {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .services-grid {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     .contact-wrapper {
         grid-template-columns: 1fr;
+        margin: 30px auto;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
     }
 }
 
-/* Mobile View (up to 600px) */
-@media (max-width: 600px) {
+/* Tablet / small screens (up to 768px) */
+@media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
         height: auto;
@@ -488,21 +507,46 @@ img {
         gap: 15px;
     }
     .nav-links {
-        gap: 15px;
+        justify-content: center;
+        gap: 15px 20px;
+    }
+    .mv-container {
+        flex-direction: column;
+    }
+    .testimonials-container {
+        flex-direction: column;
+    }
+    .footer-columns {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Mobile View (up to 600px) */
+@media (max-width: 600px) {
+    .hero {
+        padding: 90px 0;
     }
     .hero h1 {
-        font-size: 2.3rem;
+        font-size: 2.1rem;
+    }
+    .hero p {
+        font-size: 1rem;
     }
     .features-grid,
     .team-grid,
-    .services-grid,
-    .footer-columns,
-    .mv-container,
-    .testimonials-container {
+    .service-grid,
+    .gallery-grid {
         grid-template-columns: 1fr;
-        flex-direction: column;
     }
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    .section-padding {
+        padding: 50px 0;
+    }
+    .service-image-card img,
+    .team-img-placeholder img {
+        height: auto;
     }
 }
