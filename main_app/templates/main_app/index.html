@@ -10,13 +10,23 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <link rel="stylesheet" href="{% static 'main_app/style.css' %}" />
+    <script src="{% static 'main_app/main.js' %}"></script>
   </head>
+
   <body>
+    <!-- Sticky navigation bar -->
     <!-- Sticky navigation bar -->
     <nav class="navbar">
       <div class="container nav-container">
         <div class="logo">LJ Digital Concept</div>
-        <ul class="nav-links">
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
           <li><a href="{% url 'home' %}" class="active"> Home </a></li>
           <li><a href="{% url 'services' %}"> Services </a></li>
           <li><a href="{% url 'aboutus' %}"> About </a></li>
@@ -122,27 +132,15 @@
       <div class="container">
         <div class="footer-columns">
           <div class="footer-col">
-            <h4>Lj Digital Concept</h4>
             <p>
-              Your premium engineering firm and premier academy specializing in
-              custom layout web developement, platform building, and mordern
-              digital track courses.
+              Custom web development, platform building, and digital skills
+              training.
             </p>
-          </div>
-          <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="{% url 'home' %}"> Home </a></li>
-              <li><a href="{% url 'aboutus' %}"> About </a></li>
-              <li><a href="{% url 'services' %}"> Services </a></li>
-              <li><a href="{% url 'contactus' %}"> Contact Us</a></li>
-            </ul>
           </div>
           <div class="footer-col">
             <h4>Contact Details</h4>
             <p>Email: trainatdigitalconcept@gmail.com</p>
-            <p>phone:08012345789</p>
-            <p>Studio: new garrage floor 2</p>
+            <p>Phone: 0801 234 5789</p>
           </div>
         </div>
 

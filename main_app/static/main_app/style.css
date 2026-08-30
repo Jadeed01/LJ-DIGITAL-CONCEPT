@@ -72,6 +72,7 @@ img {
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    position: relative;
 }
 
 .logo{
@@ -99,6 +100,39 @@ img {
 .nav-links a.active{
     color: var(--primary-blue);
     border-bottom: 2px solid var(--primary-blue);
+}
+
+/* Hamburger toggle button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--dark-blue);
+    border-radius: 2px;
+    transition: var(--transition-fast);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* HERO SECTION (GRADIENT AND ANIMATION) */
@@ -438,7 +472,7 @@ img {
 
 .footer-columns {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(240, 244,  248, 0.1);
@@ -501,15 +535,45 @@ img {
 /* Tablet / small screens (up to 768px) */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
-        height: auto;
-        padding: 15px 0;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 80px;
+        padding: 0;
     }
+
+    .menu-toggle {
+        display: flex;
+    }
+
     .nav-links {
-        justify-content: center;
-        gap: 15px 20px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 10px 10px rgba(13, 27, 42, 0.1);
     }
+
+    .nav-links.active {
+        max-height: 300px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid var(--light-blue);
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 0;
+    }
+
     .mv-container {
         flex-direction: column;
     }
@@ -519,6 +583,7 @@ img {
     .footer-columns {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 30px;
     }
 }
 
@@ -548,5 +613,22 @@ img {
     .service-image-card img,
     .team-img-placeholder img {
         height: auto;
+    }
+    .footer {
+        padding: 40px 0 20px 0;
+    }
+    .footer-col {
+        padding: 0 10px;
+    }
+    .footer-col p,
+    .footer-col ul li {
+        font-size: 0.95rem;
+    }
+    .footer-col ul li {
+        margin-bottom: 8px;
+    }
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding: 15px 10px 0;
     }
 }

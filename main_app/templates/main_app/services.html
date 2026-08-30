@@ -5,16 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>services</title>
-    <link rel="stylesheet" href="{% static 'main_app/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main_app/style.css' %}" />
+    <script src="{% static 'main_app/main.js' %}"></script>
   </head>
   <body>
-
     <nav class="navbar">
       <div class="container nav-container">
         <div class="logo">LJ Digital Concept</div>
-        <ul class="nav-links">
-          <li><a href="{% url 'home' %}" > Home </a></li>
-          <li><a href="{% url 'services' %}" class="active"> Services </a></li>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="{% url 'home' %}" class="active"> Home </a></li>
+          <li><a href="{% url 'services' %}"> Services </a></li>
           <li><a href="{% url 'aboutus' %}"> About </a></li>
           <li><a href="{% url 'contactus' %}"> Contact </a></li>
         </ul>
@@ -50,7 +57,9 @@
           </p>
         </div>
         <!-- Services and tranning -->
-        <h2 class="section-title" style="font-size: 1.8rem;">Our specialized Tranning fields</h2>
+        <h2 class="section-title" style="font-size: 1.8rem">
+          Our specialized Tranning fields
+        </h2>
         <div class="service-grid">
           <!-- 1 -->
           <div class="service-image-card">
@@ -71,10 +80,14 @@
             </div>
           </div>
           <!-- 2 -->
-          <div  class="service-image-card">
+          <div class="service-image-card">
             <div class="service-img-placeholder">
-              <img src="images/Frontend.jpg" alt="[Basic Front End ]" height="200px"
-                width="200px" />
+              <img
+                src="images/Frontend.jpg"
+                alt="[Basic Front End ]"
+                height="200px"
+                width="200px"
+              />
             </div>
             <div class="service-detail">
               <h3>Basic Front-End Developer Track</h3>
@@ -86,167 +99,228 @@
           </div>
 
           <!-- 3 -->
-           <div class="service-image-card">
-          <div class="service-img-placeholder">
-            <img src="images/Data analyst.jpg" alt="[Data analysis]" height="200px"
-                width="200px"/>
-          </div>
-          <div class="service-detail">
-            <h3>Data Alalysis</h3>
-            <p> Extract Structural patterns and statistical meaning using database systems,reporting pipelines and sorting tools.</p>
-          </div>
+          <div class="service-image-card">
+            <div class="service-img-placeholder">
+              <img
+                src="images/Data analyst.jpg"
+                alt="[Data analysis]"
+                height="200px"
+                width="200px"
+              />
+            </div>
+            <div class="service-detail">
+              <h3>Data Alalysis</h3>
+              <p>
+                Extract Structural patterns and statistical meaning using
+                database systems,reporting pipelines and sorting tools.
+              </p>
+            </div>
           </div>
           <!-- 4 -->
-           <div class="service-image-card">
-            <div class="service-img-placeholder"> 
-              <img src="images/Software.jpg" alt="[Mobile and software Engineering]" height="200px"
-                width="200px"></div>
+          <div class="service-image-card">
+            <div class="service-img-placeholder">
+              <img
+                src="images/Software.jpg"
+                alt="[Mobile and software Engineering]"
+                height="200px"
+                width="200px"
+              />
+            </div>
             <div class="service-detail">
-              <h3> Mobile & Software Engineering</h3>
-              <p> Compile Cross-platform native smartphone systems alongside scalable general desktop computing frameworks.</p>
+              <h3>Mobile & Software Engineering</h3>
+              <p>
+                Compile Cross-platform native smartphone systems alongside
+                scalable general desktop computing frameworks.
+              </p>
             </div>
-           </div>
+          </div>
 
-           <!-- 5 -->
-            <div class="service-image-card">
-              <div class="service-img-placeholder"> <img src="images/Product dev.jpg" alt="[Product Developement]"height="200px"
-                width="200px">
-              </div>
-              <div class="service-detail">
-                <h3>Product Developement</h3>
-                <p> Transform systems mockups from raw layout ideas into physical, functional digital prototypes ready for users</p>
-              </div>
+          <!-- 5 -->
+          <div class="service-image-card">
+            <div class="service-img-placeholder">
+              <img
+                src="images/Product dev.jpg"
+                alt="[Product Developement]"
+                height="200px"
+                width="200px"
+              />
             </div>
+            <div class="service-detail">
+              <h3>Product Developement</h3>
+              <p>
+                Transform systems mockups from raw layout ideas into physical,
+                functional digital prototypes ready for users
+              </p>
+            </div>
+          </div>
 
-            <!-- 6 -->
-             <div class="service-image-card">
-              <div class="service-img-placeholder"> <img src="images/Ai automation.jpg" alt="[Ai Automation]" height="200px"
-                width="200px"></div>
-              <div class="service-detail">
-                <h3> Ai Automation</h3>
-                <p>Automate repetitive tasks and business workflows using AI-powered tools 
-                  to improve productivity, reduce manual work, and enhance operational efficiency. </p>
-              </div>
-             </div>
+          <!-- 6 -->
+          <div class="service-image-card">
+            <div class="service-img-placeholder">
+              <img
+                src="images/Ai automation.jpg"
+                alt="[Ai Automation]"
+                height="200px"
+                width="200px"
+              />
+            </div>
+            <div class="service-detail">
+              <h3>Ai Automation</h3>
+              <p>
+                Automate repetitive tasks and business workflows using
+                AI-powered tools to improve productivity, reduce manual work,
+                and enhance operational efficiency.
+              </p>
+            </div>
+          </div>
 
-             <!-- 7 -->
-              <div class="service-image-card" >
-                <div class="service-img-placeholder"><img src="images/Graphics.jpg" alt="[Graphics Designing]" height="200px"
-                width="200px"></div>
-                <div class="service-detail">
-                  <h3>Graphics Designing</h3>
-                  <p> Design eye-catching visual content including logos, flyers, social media posts, 
-                    branding materials, and marketing graphics that communicate ideas effectively.</p>
-                </div>
-              </div>
+          <!-- 7 -->
+          <div class="service-image-card">
+            <div class="service-img-placeholder">
+              <img
+                src="images/Graphics.jpg"
+                alt="[Graphics Designing]"
+                height="200px"
+                width="200px"
+              />
+            </div>
+            <div class="service-detail">
+              <h3>Graphics Designing</h3>
+              <p>
+                Design eye-catching visual content including logos, flyers,
+                social media posts, branding materials, and marketing graphics
+                that communicate ideas effectively.
+              </p>
+            </div>
+          </div>
 
-              <!--8-->
-              <div class="service-image-card">
-                <div class="service-img-placeholder"><img src="images/Uiux.jpg" alt="[UIUX Design]" height="200px"
-                width="200px"></div>
-                <div class="service-detail">
-                  <h3> UiUX Design</h3>
-                  <p> Create user-friendly, visually appealing digital experiences through intuitive 
-                    interfaces, smooth navigation, and user-centered design principles.</p>
-                </div>
-              </div>
+          <!--8-->
+          <div class="service-image-card">
+            <div class="service-img-placeholder">
+              <img
+                src="images/Uiux.jpg"
+                alt="[UIUX Design]"
+                height="200px"
+                width="200px"
+              />
+            </div>
+            <div class="service-detail">
+              <h3>UiUX Design</h3>
+              <p>
+                Create user-friendly, visually appealing digital experiences
+                through intuitive interfaces, smooth navigation, and
+                user-centered design principles.
+              </p>
+            </div>
+          </div>
 
-              <!-- 9 -->
-               <div class="service-image-card">
-                <div class="service-img-placeholder">
-                  <img src="images/cyber security.jpg" alt="[Cyber Security]" height="200px"
-                width="200px"></div>
-                  <div class="service-detail">
-                    <h3>
-                      Cyber Security
-                    </h3>
-                    <p> Defend critical network pathways, run threat layout modeling assessments, 
-                      and encrypt weak system entry vectors.</p>
-                  </div>
-               </div>
-               <!-- 10 -->
-                <div class="service-image-card">
-                  <div class="service-img-placeholder">
-                    <img src="images/Content.jpg" alt="[Content Creation]" height="200px"
-                width="200px">
-                  </div>
-                  <div  class="service-detail">
-                    <h3>Content Creation</h3>
-                    <p>Produce engaging written, visual, and video content that connects with your 
-                      audience and strengthens your brand. </p>
-                  </div>
-                </div>
-         </div>
+          <!-- 9 -->
+          <div class="service-image-card">
+            <div class="service-img-placeholder">
+              <img
+                src="images/cyber security.jpg"
+                alt="[Cyber Security]"
+                height="200px"
+                width="200px"
+              />
+            </div>
+            <div class="service-detail">
+              <h3>Cyber Security</h3>
+              <p>
+                Defend critical network pathways, run threat layout modeling
+                assessments, and encrypt weak system entry vectors.
+              </p>
+            </div>
+          </div>
+          <!-- 10 -->
+          <div class="service-image-card">
+            <div class="service-img-placeholder">
+              <img
+                src="images/Content.jpg"
+                alt="[Content Creation]"
+                height="200px"
+                width="200px"
+              />
+            </div>
+            <div class="service-detail">
+              <h3>Content Creation</h3>
+              <p>
+                Produce engaging written, visual, and video content that
+                connects with your audience and strengthens your brand.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Testimonials -->
-  <section class="section-padding features-bg">
-    <div class="container">
-      <h2 class="section-title"> What Our Alumni Say</h2>
-    <div class="testimonials-container">
-      <div class="testimonial-card">
-        <p> "The Full Stack curriculum transformed my understanding. I built three web platforms 
-          from scratch and secured an engineering contract immediately."</p>
-          <br>
-          <strong> Badmus Habeebullah, Full Stack Alumnus </strong>
+    <section class="section-padding features-bg">
+      <div class="container">
+        <h2 class="section-title">What Our Alumni Say</h2>
+        <div class="testimonials-container">
+          <div class="testimonial-card">
+            <p>
+              "The Full Stack curriculum transformed my understanding. I built
+              three web platforms from scratch and secured an engineering
+              contract immediately."
+            </p>
+            <br />
+            <strong> Badmus Habeebullah, Full Stack Alumnus </strong>
+          </div>
+
+          <div class="testimonial-card">
+            <p>
+              "LJ Digital Concept built our marketplace website flawlessly, then
+              upskilled our internal operations via their product management
+              training."
+            </p>
+            <br />
+            <strong> Beatrice Thorne, Tech CEO </strong>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="testimonial-card">
-       <p> "LJ Digital Concept built our marketplace website flawlessly, then upskilled our 
-        internal operations via their product management training."</p> <br>
-        <strong>
-          Beatrice Thorne, Tech CEO
-        </strong>
+    <!-- Call to action -->
+    <section
+      class="section-padding"
+      style="
+        text-align: center;
+        background-color: blueviolet;
+        color: var(--white);
+      "
+    >
+      <div class="container">
+        <h2>Ready to Elevate Your Digital Footprint?</h2>
+        <p style="margin: 15px 0 30px 0; opacity: 0.8">
+          Enrollment are currently open fou our upcoming developer and analytics
+          Class
+        </p>
+        <a href="Contactus.html" class="btn"> Apply for next Class</a>
       </div>
-     </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Call to action -->
-   <section class="section-padding" style="text-align: center; background-color: blueviolet; color: var(--white);">
-    <div class="container">
-      <h2> Ready to Elevate Your Digital Footprint?</h2>
-      <p style="margin: 15px 0 30px 0; opacity: 0.8;"> Enrollment are currently open fou our upcoming developer and analytics Class</p>
-      <a href="Contactus.html" class="btn"> Apply for next Class</a>
-    </div>
-   </section>
-
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-columns">
           <div class="footer-col">
-            <h4> LJ Digital concept</h4>
-            <p> Your premium engineering firm and premier academy specializing im custom layout web developement,
-              and  platform building, and mordern digital track courses.</p>
+            <p>
+              Custom web development, platform building, and digital skills
+              training.
+            </p>
           </div>
-
-            <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="{% url 'home' %}"> Home </a></li>
-              <li><a href="{% url 'aboutus' %}"> About </a></li>
-              <li><a href="{% url 'services' %}"> Services </a></li>
-              <li><a href="{% url 'contactus' %}"> Contact Us</a></li>
-            </ul>
-          </div>
-
           <div class="footer-col">
             <h4>Contact Details</h4>
             <p>Email: trainatdigitalconcept@gmail.com</p>
-            <p>phone:08012345789</p>
-            <p>Studio: new garrage floor 2</p>
+            <p>Phone: 0801 234 5789</p>
           </div>
         </div>
 
-        <div footer-bottom>
+        <div class="footer-bottom">
           <p>&copy; 2026 Lj Digital Concept. All Rights Reserved</p>
-        </div>
         </div>
       </div>
     </footer>
-
-
-
   </body>
 </html>
