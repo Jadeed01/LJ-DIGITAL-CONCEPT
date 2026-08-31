@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['lj-digital-concept.onrender.com','.onrender.com','*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,3 +124,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+JAZZMIN_UI_TWEAKS = {
+    # "theme": "flatly",
+    "dark_mode_theme": "darkly",
+}
